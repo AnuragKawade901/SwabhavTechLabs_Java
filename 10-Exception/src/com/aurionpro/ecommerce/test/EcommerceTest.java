@@ -1,0 +1,98 @@
+package com.aurionpro.ecommerce.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.ecommerce.model.CreditCard;
+import com.aurionpro.ecommerce.model.IPaymentGateway;
+import com.aurionpro.ecommerce.model.NetBanking;
+import com.aurionpro.ecommerce.model.UPI;
+
+public class EcommerceTest {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		while (true) {
+			System.out.println("\n--- E-Commerce Payment ---");
+			System.out.println("1. Pay with Credit Card");
+			System.out.println("2. Pay with UPI");
+			System.out.println("3. Pay with NetBanking");
+			System.out.println("4. Exit");
+			System.out.print("Choose Payment Method (1-4): ");
+
+			try {
+				int choice = Integer.parseInt(scanner.nextLine());
+
+				if (choice == 4) {
+					System.out.println(" Thank you for shopping with us!");
+					break;
+				}
+
+				if (choice < 1 || choice > 4) {
+					System.out.println("❌ Please choose a valid option (1-4).");
+					continue;
+				}
+
+				System.out.print("Enter amount (₹1 - ₹20000): ₹");
+				double amount = Double.parseDouble(scanner.nextLine());
+
+				if (amount <= 0 || amount > 20000) {
+					System.out.println("❌ Amount must be between ₹1 and ₹20000.");
+					continue;
+				}
+
+				IPaymentGateway gateway = null;
+
+				switch (choice) {
+					case 1:
+						System.out.print("Enter 16-digit Credit Card Number: ");
+						String card = scanner.nextLine();
+						if (!card.matches("\\d{16}")) {
+							System.out.println("❌ Invalid card number. Must be 16 digits.");
+							continue;
+						}
+						gateway = new CreditCard(card);
+						break;
+
+					case 2:
+						System.out.print("Enter UPI ID (e.g., user@bank): ");
+						String upi = scanner.nextLine();
+						if (!upi.matches("^[\\w.]+@[\\w]+$")) {
+							System.out.println("❌ Invalid UPI ID format.");
+							continue;
+						}
+						gateway = new UPI(upi);
+						break;
+
+					case 3:
+						System.out.print("Enter NetBanking Username (min 4 chars): ");
+						String user = scanner.nextLine();
+						if (user.length() < 4) {
+							System.out.println("❌ Username must be at least 4 characters.");
+							continue;
+						}
+						gateway = new NetBanking(user);
+						break;
+				}
+
+				System.out.println("1. Pay\n2. Refund");
+				System.out.print("Choose action: ");
+				int action = Integer.parseInt(scanner.nextLine());
+
+				if (action == 1) {
+					gateway.pay(amount);
+				} else if (action == 2) {
+					gateway.refund(amount);
+				} else {
+					System.out.println("❌ Invalid action. Choose 1 or 2.");
+				}
+
+			} catch (NumberFormatException e) {
+				System.out.println("❌ Invalid input. Please enter valid numbers.");
+			} catch (Exception e) {
+				System.out.println("❌ Unexpected error: " + e.getMessage());
+			}
+		}
+
+		scanner.close();
+	}
+}

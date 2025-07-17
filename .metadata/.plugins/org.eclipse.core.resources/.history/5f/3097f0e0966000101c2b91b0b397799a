@@ -1,0 +1,7 @@
+package com.aurionpro.SRP.PaitentRecord.model;
+
+public class EmailNotification {
+public void emailNotification(PaitentRecord paitentRecord) {
+	System.out.println("Email sent to ---> "+paitentRecord.getPaitentEmail());
+}
+}

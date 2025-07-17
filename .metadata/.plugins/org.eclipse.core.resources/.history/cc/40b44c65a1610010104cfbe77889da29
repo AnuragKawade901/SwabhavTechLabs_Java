@@ -1,0 +1,29 @@
+package com.aurionpro.model;
+
+public class AtmWithdrawFinal {
+    public static void main(String[] args) {
+        int balance = 10000;  // Hardcoded balance
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter amount to withdraw: ");
+            int amount = sc.nextInt();
+
+            if (amount > balance) {
+                throw new ArithmeticException("Insufficient balance.");
+            }
+
+            balance -= amount;
+            System.out.println("Withdrawal successful.");
+            System.out.println("Remaining balance: ₹" + balance);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        } finally {
+            System.out.println("Transaction session ended.");
+            sc.close();  // Close scanner in finally to ensure cleanup
+        }
+    }
+}

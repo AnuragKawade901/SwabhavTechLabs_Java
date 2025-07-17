@@ -1,0 +1,10 @@
+package com.aurionpro.SOLIDS.Order.model;
+
+public class ElectronicsDiscount implements DiscountStratergy{
+
+	@Override
+	public double applyDiscount(double amount) {
+		 return amount * 0.90; // 10% discount
+	}
+
+}

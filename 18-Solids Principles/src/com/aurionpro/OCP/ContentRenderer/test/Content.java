@@ -1,0 +1,9 @@
+package com.aurionpro.OCP.ContentRenderer.test;
+
+import com.aurionpro.OCP.ContentRenderer.model.ContentRenderer;
+
+public class Content {
+	public void content(ContentRenderer contentRenderer) {
+		contentRenderer.getRender();
+	}
+}

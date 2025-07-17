@@ -1,0 +1,38 @@
+package com.aurionpro.Prototype.model;
+
+interface CarPrototype {
+    CarPrototype cloneCar();
+}
+
+// Step 2: Concrete class implementing clone
+class Car implements CarPrototype {
+    public String brand;
+    public String model;
+
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    // Implement clone method
+    @Override
+    public Car cloneCar() {
+        return new Car(this.brand, this.model);  // shallow copy
+    }
+
+    public void showDetails() {
+        System.out.println("Car: " + brand + " " + model);
+    }
+}
+public class PrototypeExample {
+    public static void main(String[] args) {
+        Car original = new Car("Toyota", "Innova");
+        Car copy = original.cloneCar();
+        
+        copy.model = "Supra";
+
+        original.showDetails();
+        copy.showDetails();
+    }
+
+}

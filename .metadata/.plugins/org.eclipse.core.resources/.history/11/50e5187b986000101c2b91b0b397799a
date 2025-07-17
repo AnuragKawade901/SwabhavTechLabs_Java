@@ -1,0 +1,32 @@
+package com.aurionpro.SRP.PatientRecord.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.SRP.PaitentRecord.model.EmailNotification;
+import com.aurionpro.SRP.PaitentRecord.model.PatientRecord;
+import com.aurionpro.SRP.PaitentRecord.model.PrintRecord;
+
+public class PatientRecordTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	
+	System.out.println("Enter patient name: ");
+	String name = scanner.nextLine();
+	System.out.println("Enter patient number: ");
+	int number = scanner.nextInt();
+	System.out.println("Enter patient email: ");
+	String email = scanner.nextLine();
+	System.out.println("Enter doctor name: ");
+	String docName = scanner.nextLine();
+
+	PatientRecord patient = new PatientRecord(name, number, email, docName);
+	
+	EmailNotification emailNot = new EmailNotification();
+	emailNot.emailNotification(patient);
+	
+	PrintRecord printRec = new PrintRecord();
+	printRec.printRecord(patient);
+	
+	scanner.close();
+}
+}

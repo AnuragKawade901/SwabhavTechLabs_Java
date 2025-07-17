@@ -1,0 +1,92 @@
+package com.aurionpro.banking.test;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import com.aurionpro.banking.model.CurrentAccount;
+import com.aurionpro.banking.model.IAccountOperation;
+import com.aurionpro.banking.model.LoanAccount;
+import com.aurionpro.banking.model.SavingAccount;
+
+public class BankingTest {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		IAccountOperation[] accounts = {
+			new SavingAccount(10000),
+			new CurrentAccount(2000),
+			new LoanAccount(50000)
+		};
+		String[] accountNames = { "Savings Account", "Current Account", "Loan Account" };
+
+		while (true) {
+			System.out.println("\n--- Bank Simulator ---");
+			System.out.println("1. Access Savings Account");
+			System.out.println("2. Access Current Account");
+			System.out.println("3. Access Loan Account");
+			System.out.println("4. Exit");
+			System.out.print("Select an option: ");
+
+			try {
+				int choice = scanner.nextInt();
+				scanner.nextLine(); 
+
+				if (choice >= 1 && choice <= 3) {
+					IAccountOperation account = accounts[choice - 1];
+					String name = accountNames[choice - 1];
+					handleAccount(account, name, scanner);
+				} else if (choice == 4) {
+					System.out.println(" Thank you for using the bank system.");
+					break;
+				} else {
+					System.out.println("❌ Invalid option. Try again.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("❌ Please enter a number.");
+				scanner.nextLine(); 
+			}
+		}
+		scanner.close();
+	}
+
+	private static void handleAccount(IAccountOperation account, String name, Scanner scanner) {
+		while (true) {
+			System.out.println("\n-- " + name + " Menu --");
+			System.out.println("1. Deposit");
+			System.out.println("2. Withdraw/Repay");
+			System.out.println("3. Check Balance");
+			System.out.println("4. Go Back");
+			System.out.print("Choose an action: ");
+
+			try {
+				int action = scanner.nextInt();
+				scanner.nextLine(); 
+
+				switch (action) {
+					case 1:
+						System.out.print("Enter amount to deposit: ₹");
+						double dep = scanner.nextDouble();
+						scanner.nextLine();
+						account.deposit(dep);
+						break;
+					case 2:
+						System.out.print("Enter amount to withdraw/repay: ₹");
+						double wd = scanner.nextDouble();
+						scanner.nextLine();
+						account.withdraw(wd);
+						break;
+					case 3:
+						account.checkBalance();
+						break;
+					case 4:
+						return;
+					default:
+						System.out.println("❌ Invalid action.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("❌ Enter numeric values only.");
+				scanner.nextLine(); 
+			}
+		}
+	}
+
+}

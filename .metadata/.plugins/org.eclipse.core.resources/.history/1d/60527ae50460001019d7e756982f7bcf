@@ -1,0 +1,5 @@
+package com.aurionpro.plugin.model;
+
+public class Plugin {
+
+}

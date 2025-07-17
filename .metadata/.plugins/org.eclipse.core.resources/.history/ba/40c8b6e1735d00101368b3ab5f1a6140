@@ -1,0 +1,9 @@
+package com.aurionpro.test;
+
+public class ThreadUsingRunnableTest {
+public static void main(String[] args) {
+	
+	ThreadUsingRunnable thread0 = new ThreadUsingRunnable();
+	thread0.run();
+}
+}

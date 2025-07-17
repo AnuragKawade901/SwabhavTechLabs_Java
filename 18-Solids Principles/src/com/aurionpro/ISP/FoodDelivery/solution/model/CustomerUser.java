@@ -1,0 +1,20 @@
+package com.aurionpro.ISP.FoodDelivery.solution.model;
+
+public class CustomerUser implements ICustomerOperations{
+
+	@Override
+	public void placeOrder() {
+		 System.out.println("Order placed successfully.");		
+	}
+
+	@Override
+	public void trackOrder() {
+		 System.out.println("Order is being tracked.");		
+	}
+
+	@Override
+	public void rateDriver() {
+		 System.out.println("Rate Driver 5 star.");		
+	}
+
+}

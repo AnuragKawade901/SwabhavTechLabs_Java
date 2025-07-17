@@ -1,0 +1,13 @@
+package com.aurionpro.Builder.model;
+
+public class BuilderExample {
+	 public static void main(String[] args) {
+	        // Build a medium pizza with cheese and mushrooms
+	        Pizza myPizza = new Pizza.PizzaBuilder("Medium")
+	                            .addCheese()
+	                            .addMushrooms()
+	                            .build();
+
+	        myPizza.showPizza();
+	    }
+}

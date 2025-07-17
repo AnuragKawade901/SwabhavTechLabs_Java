@@ -1,0 +1,41 @@
+package com.aurionpro.SOLIDS.IMS.test;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+import com.aurionpro.SOLIDS.IMS.model.EmailNotifier;
+import com.aurionpro.SOLIDS.IMS.model.FIFOValuation;
+import com.aurionpro.SOLIDS.IMS.model.IValuationStrategy;
+import com.aurionpro.SOLIDS.IMS.model.InventoryService;
+import com.aurionpro.SOLIDS.IMS.model.Product;
+import com.aurionpro.SOLIDS.IMS.model.ReorderService;
+import com.aurionpro.SOLIDS.Order.model.Notifier;
+
+public class IMSTest {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        List<Notifier> notifiers = Arrays.asList(new EmailNotifier(), new SMSNotifier());
+        ReorderService reorderService = new ReorderService();
+        IValuationStrategy strategy = new FIFOValuation(); // or new LIFOValuation()
+
+        InventoryService ims = new InventoryService(notifiers, reorderService, strategy);
+
+        // Add a product
+        ims.addProduct(new Product("Milk", 7, 3, 1.50));
+
+        // User input
+        System.out.print("Enter product name to remove stock: ");
+        String productName = scanner.nextLine();
+
+        System.out.print("Enter quantity to remove: ");
+        int qty = scanner.nextInt();
+
+        // Operations
+        ims.removeStock(productName, qty);
+        ims.showInventoryValue();
+
+        scanner.close();
+    }
+}

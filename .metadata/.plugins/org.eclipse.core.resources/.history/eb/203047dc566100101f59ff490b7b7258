@@ -1,0 +1,6 @@
+package com.aurionpro.OCP.FixedDeposit.violation.model;
+
+public enum FestivalType {
+	NEWYEAR, DIWALI, HOLI, OTHERS
+
+}

@@ -1,0 +1,33 @@
+package com.aurionpro.Minitask.test;
+
+import com.aurionpro.Minitask.model.InvalidMarksException;
+
+public class StudentGrading {
+	   @SuppressWarnings("unused")
+	public static void main(String[] args) {
+	        String studentName = null;  // Try "John" to test valid case
+	        int marks = 105;            // Try 85 for valid marks
+
+	        try {
+	            if (studentName == null) {
+	                throw new NullPointerException("Student name is missing.");
+	            }
+
+	            if (marks < 0 || marks > 100) {
+	                throw new InvalidMarksException("Marks must be between 0 and 100.");
+	            }
+
+	            System.out.println("Student: " + studentName);
+	            System.out.println("Marks: " + marks);
+
+	        } catch (InvalidMarksException e) {
+	            System.out.println("Invalid marks: " + e.getMessage());
+
+	        } catch (NullPointerException e) {
+	            System.out.println("Null name: " + e.getMessage());
+
+	        } finally {
+	            System.out.println("Grading process completed.");
+	        }
+	    }
+}

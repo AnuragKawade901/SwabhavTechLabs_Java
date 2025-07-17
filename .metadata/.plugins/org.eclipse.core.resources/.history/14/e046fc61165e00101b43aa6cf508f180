@@ -1,0 +1,7 @@
+package com.aurionpro.test;
+
+public class DaemonTest {
+public static void main(String[] args) {
+	DaemonDemo daemon = new DaemonDemo();
+}
+}

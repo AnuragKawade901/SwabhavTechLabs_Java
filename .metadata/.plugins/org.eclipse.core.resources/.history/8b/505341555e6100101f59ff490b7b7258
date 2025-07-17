@@ -1,0 +1,17 @@
+package com.aurionpro.LSP.BankSystem.solution.model;
+
+public class SavingAccount implements IWithdraw {
+	private double balance = 0;
+
+	@Override
+	public void deposit(double amount) {
+		balance += amount;
+	}
+
+	@Override
+	public void withdraw(double amount) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

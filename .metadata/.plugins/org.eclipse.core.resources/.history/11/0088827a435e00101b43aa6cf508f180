@@ -1,0 +1,12 @@
+package com.aurionpro.student.test;
+
+import com.aurionpro.student.model.Student;
+
+public class StudentTest {
+public static void main(String[] args) {
+	Student student = new Student();
+	
+	Class c = Student.class;
+	System.out.println(c.getName());
+}
+}

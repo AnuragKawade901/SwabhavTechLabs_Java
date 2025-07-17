@@ -1,0 +1,11 @@
+package com.aurionpro.SRP.PaitentRecord.model;
+
+public class PrintRecord {
+	public void printRecord(PaitentRecord paitentRecord) {
+		System.out.println("Paitent Name: "+paitentRecord.getPatientName());
+		System.out.println("Doctor Name: "+paitentRecord.getDoctorName());
+		System.out.println("Paitent Number: "+paitentRecord.getPatientNumber());
+		System.out.println("Paitent Email address: "+paitentRecord.getPaitentEmail());
+		
+	}
+}

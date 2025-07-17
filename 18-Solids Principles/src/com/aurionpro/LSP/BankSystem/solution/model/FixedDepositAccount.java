@@ -1,0 +1,13 @@
+package com.aurionpro.LSP.BankSystem.solution.model;
+
+public class FixedDepositAccount implements IDeposit {
+	private double balance = 0;
+
+	@Override
+	public void deposit(double amount) {
+		balance += amount;
+		System.out.println("Deposited in Fixed Deposit: " + amount);
+
+	}
+
+}

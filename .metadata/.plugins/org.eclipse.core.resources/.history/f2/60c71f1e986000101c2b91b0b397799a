@@ -1,0 +1,16 @@
+package com.aurionpro.SRP.PatientRecord.test;
+
+import java.util.Scanner;
+
+public class PatientRecordTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	
+	System.out.println("Enter patient name: ");
+	System.out.println("Enter patient number: ");
+	System.out.println("Enter patient email: ");
+	System.out.println("Enter doctor name: ");
+
+	
+}
+}

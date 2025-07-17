@@ -1,0 +1,12 @@
+package com.aurionpro.LSP.BankSystem.solution.test;
+
+import com.aurionpro.LSP.BankSystem.solution.model.FixedDepositAccount;
+import com.aurionpro.LSP.BankSystem.solution.model.IDeposit;
+import com.aurionpro.LSP.BankSystem.solution.model.SavingAccount;
+
+public class FixedDepositTest {
+public static void main(String[] args) {
+	IDeposit d1 = new SavingAccount();
+	IDepost d2 =  new FixedDepositAccount();
+}
+}

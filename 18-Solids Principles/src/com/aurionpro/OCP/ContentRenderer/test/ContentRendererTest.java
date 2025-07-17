@@ -1,0 +1,20 @@
+package com.aurionpro.OCP.ContentRenderer.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.OCP.ContentRenderer.model.Article;
+import com.aurionpro.OCP.ContentRenderer.model.Podcast;
+import com.aurionpro.OCP.ContentRenderer.model.Quiz;
+import com.aurionpro.OCP.ContentRenderer.model.Video;
+
+public class ContentRendererTest {
+public static void main(String[] args) {
+	Content contentRen = new Content();
+	
+	contentRen.content(new Video());
+	contentRen.content(new Article());
+	contentRen.content(new Podcast());
+	contentRen.content(new Quiz());
+	
+}
+}

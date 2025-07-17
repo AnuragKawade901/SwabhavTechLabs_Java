@@ -1,0 +1,65 @@
+package com.aurionpro.OCP.FixedDeposit.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.OCP.FixedDeposit.model.DiwaliPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.FestivalType;
+import com.aurionpro.OCP.FixedDeposit.model.HoliPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.InterestRatePolicy;
+import com.aurionpro.OCP.FixedDeposit.model.NewYearPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.OtherPolicy;
+
+public class FDTest {
+	  public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	 try {
+         System.out.print("Enter Account Number: ");
+         int acc = Integer.parseInt(sc.nextLine());
+
+         System.out.print("Enter Name: ");
+         String name = sc.nextLine();
+
+         System.out.print("Enter Principal Amount (> 0): ");
+         double principal = Double.parseDouble(sc.nextLine());
+         if (principal <= 0)
+             throw new IllegalArgumentException("Principal must be greater than 0.");
+
+         System.out.print("Enter Duration in years (> 0): ");
+         int duration = Integer.parseInt(sc.nextLine());
+         if (duration <= 0)
+             throw new IllegalArgumentException("Duration must be greater than 0.");
+
+         System.out.print("Enter Festival (NEWYEAR, DIWALI, HOLI, OTHERS): ");
+         String fest = sc.nextLine().toUpperCase();
+
+         InterestRatePolicy policy = getPolicyByFestival(fest);
+
+         FixedDeposit fd = new FixedDeposit(acc, name, principal, duration, policy);
+
+         System.out.println("\n--- Fixed Deposit Details ---");
+         System.out.println("Name: " + fd.getName());
+         System.out.println("Account Number: " + fd.getAccountNumber());
+         System.out.println("Principal: ₹" + fd.getPrincipal());
+         System.out.println("Duration: " + fd.getDuration() + " years");
+         System.out.println("Festival Rate: " + policy.getRate() + "%");
+         System.out.println("Simple Interest: ₹" + fd.calculateSimpleInterest());
+
+     } catch (NumberFormatException e) {
+         System.out.println("❌ Please enter valid numeric values for Account, Principal, and Duration.");
+     } catch (IllegalArgumentException e) {
+         System.out.println("❌ " + e.getMessage());
+     } catch (Exception e) {
+         System.out.println("❌ Unexpected error: " + e.getMessage());
+     } finally {
+         sc.close();
+     }
+ }
+
+ private static InterestRatePolicy getPolicyByFestival(String fest) {
+     switch (FestivalType.valueOf(fest)) {
+         case NEWYEAR: return new NewYearPolicy();
+         case DIWALI: return new DiwaliPolicy();
+         case HOLI: return new HoliPolicy();
+         case OTHERS: return new OtherPolicy();
+         default: throw new IllegalArgumentException("Invalid festival type.");
+     }

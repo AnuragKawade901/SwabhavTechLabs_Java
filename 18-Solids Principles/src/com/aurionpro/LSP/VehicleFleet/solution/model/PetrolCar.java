@@ -1,0 +1,20 @@
+package com.aurionpro.LSP.VehicleFleet.solution.model;
+
+public class PetrolCar implements IFuelVehicle{
+
+	@Override
+	public void start() {
+System.out.println("Petrol car started");		
+	}
+
+	@Override
+	public void stop() {
+System.out.println("Petrol car stopped");		
+	}
+
+	@Override
+	public void refuel() {
+System.out.println("Petrol car refuled");		
+	}
+
+}

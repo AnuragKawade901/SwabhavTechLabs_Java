@@ -1,0 +1,20 @@
+package com.aurionpro.test;
+
+import com.aurionpro.model.DaemonDemo;
+
+public class DaemonTest{
+public static void main (String[] args) 
+	{
+  	DaemonDemo t1 = new DaemonDemo();
+  	t1.setDaemon(true);
+  
+  	t1.start();
+  
+  	// Ensuring JVM doesn't terminate immediately
+  	try {
+        Thread.sleep(100); 
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+}

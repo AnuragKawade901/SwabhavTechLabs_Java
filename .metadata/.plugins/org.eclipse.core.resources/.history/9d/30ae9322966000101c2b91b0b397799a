@@ -1,0 +1,11 @@
+package com.aurionpro.SRP.PaitentRecord.model;
+
+public class PaitentRecord {
+	private String patientName;
+	private int patientNumber;
+	private String patientBloodGroup;
+	private String doctorName;
+	private String paitentEmail;
+	
+	
+}

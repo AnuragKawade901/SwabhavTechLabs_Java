@@ -1,0 +1,5 @@
+package com.aurionpro.employee.model;
+
+public class Employee {
+
+}

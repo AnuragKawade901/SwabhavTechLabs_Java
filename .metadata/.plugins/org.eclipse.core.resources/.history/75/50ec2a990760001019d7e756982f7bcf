@@ -1,0 +1,24 @@
+package com.aurionpro.hiddenops.test;
+
+import java.lang.reflect.Method;
+
+import com.aurionpro.hiddenops.model.HiddenOps;
+
+public class HiddenOpsTest {
+	public static void main(String[] args) throws Exception {
+        // Create object of HiddenOps
+        HiddenOps obj = new HiddenOps();
+
+        // Get the Class object
+        Class<?> clazz = HiddenOps.class;
+
+        // Access the private method secretCode(String)
+        Method method = clazz.getDeclaredMethod("secretCode", String.class);
+        method.setAccessible(true); // Make private method accessible
+
+        // Call the method with "hello"
+        Object result = method.invoke(obj, "hello");
+
+        // Print the result
+        System.out.println("Output: " + result);
+    }

@@ -1,0 +1,14 @@
+package com.aurionpro.model;
+
+public class ThreadUsingThreadClassTest {
+public static void main(String[] args) {
+	ThreadUsingThreadClass thread1 = new ThreadUsingThreadClass();
+	thread1.start();
+	
+	ThreadUsingThreadClass thread2 = new ThreadUsingThreadClass();
+	thread2.start();
+	
+	ThreadUsingThreadClass thread3 = new ThreadUsingThreadClass();
+	thread3.start();
+}
+}

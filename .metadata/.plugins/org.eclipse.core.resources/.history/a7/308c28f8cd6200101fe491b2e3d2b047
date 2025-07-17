@@ -1,0 +1,13 @@
+package com.aurionpro.Singleton.model;
+
+public class SingletonExample {
+	public static void main(String[] args) {
+        MySingleton s1 = MySingleton.getInstance();
+        MySingleton s2 = MySingleton.getInstance();
+
+        s1.showMessage();
+
+        // Check if both are the same instance
+        System.out.println("s1 and s2 are same: " + (s1 == s2));  // true
+    }
+}

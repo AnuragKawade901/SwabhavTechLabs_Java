@@ -1,0 +1,13 @@
+package com.aurionpro.OCP.ContentRenderer.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.OCP.ContentRenderer.model.ContentRenderer;
+
+public class ContentRendererTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	ContentRenderer contentRenderer = new ContentRenderer() {
+
+}
+}

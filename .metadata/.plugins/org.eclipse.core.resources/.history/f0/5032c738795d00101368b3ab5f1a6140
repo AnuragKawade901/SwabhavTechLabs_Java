@@ -1,0 +1,8 @@
+package com.aurionpro.test;
+
+public class PriorityTest {
+public static void main(String[] args) {
+	
+	new PriorityDemo("alpha",8).start();
+}
+}

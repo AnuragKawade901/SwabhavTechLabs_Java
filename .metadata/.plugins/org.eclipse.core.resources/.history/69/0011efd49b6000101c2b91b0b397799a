@@ -1,0 +1,5 @@
+package com.aurionpro.OCP.model;
+
+public class Article implements ContentRenderer{
+
+}

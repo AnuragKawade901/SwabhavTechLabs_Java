@@ -1,0 +1,8 @@
+package com.aurionpro.OCP.model;
+
+public class Video implements ContentRenderer{
+	@Override
+	public void getRender() {
+System.out.println("Video is rendering");	}
+
+}

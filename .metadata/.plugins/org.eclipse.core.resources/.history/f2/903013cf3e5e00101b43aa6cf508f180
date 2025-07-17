@@ -1,0 +1,16 @@
+package com.aurionpro.student.model;
+
+public class Student {
+	public String name;
+	public int rollNumber;
+	public double cgpa;
+	
+	public Student() {
+		System.out.println("default constructor");
+	}
+	public Student(String name, int rollNumber, double cgpa) {
+		this.name = name;
+		this.rollNumber = rollNumber;
+		this.cgpa = cgpa;
+	}
+}

@@ -1,0 +1,5 @@
+package com.aurionpro.OCP.ClaimProcessor.test;
+
+public class Claim {
+public void insuranceClaim(ClaimProcessor claimProcessor)
+}

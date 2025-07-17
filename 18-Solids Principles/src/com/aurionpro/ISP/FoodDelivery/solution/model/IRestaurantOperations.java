@@ -1,0 +1,6 @@
+package com.aurionpro.ISP.FoodDelivery.solution.model;
+
+public interface IRestaurantOperations {
+    void manageRestaurant();
+
+}

@@ -1,0 +1,48 @@
+package com.aurionpro.plugin.test;
+
+public class PluginTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scnner(System.in);
+    try {
+        // Ask user to confirm running plugin
+        System.out.print("Do you want to run the plugin? (yes/no): ");
+        String choice = scanner.nextLine().trim().toLowerCase();
+
+        if (!choice.equals("yes")) {
+            System.out.println("Plugin execution cancelled.");
+            return;
+        }
+
+        // Get Plugin class
+        Class<?> clazz = Class.forName("com.plugin.model.Plugin");
+
+        // Access private constructor
+        Constructor<?> constructor = clazz.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Object pluginObj = constructor.newInstance();
+
+        // Set version = 3.1
+        Field versionField = clazz.getDeclaredField("version");
+        versionField.setAccessible(true);
+        versionField.set(pluginObj, 3.1);
+
+        // Call execute()
+        Method executeMethod = clazz.getDeclaredMethod("execute");
+        executeMethod.setAccessible(true);
+        executeMethod.invoke(pluginObj);
+
+        // Print version
+        System.out.println("Plugin version: " + versionField.get(pluginObj));
+
+    } catch (ClassNotFoundException e) {
+        System.out.println("Plugin class not found: " + e.getMessage());
+    } catch (NoSuchMethodException e) {
+        System.out.println("Required method not found: " + e.getMessage());
+    } catch (Exception e) {
+        System.out.println("Something went wrong: " + e.getMessage());
+    } finally {
+        scanner.close();
+    }
+}
+}
+}

@@ -1,0 +1,10 @@
+package com.aurionpro.OCP.model;
+
+public class Podcast implements ContentRenderer{
+
+	@Override
+	public void getRender() {
+System.out.println("Podcast in rendering");		
+	}
+
+}

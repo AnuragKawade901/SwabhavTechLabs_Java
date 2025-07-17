@@ -1,0 +1,23 @@
+package com.aurionpro.ISP.EducationalSoftware.solution.test;
+
+import com.aurionpro.ISP.EducationalSoftware.solution.model.AIProctorSystem;
+import com.aurionpro.ISP.EducationalSoftware.solution.model.AdminUser;
+import com.aurionpro.ISP.EducationalSoftware.solution.model.IAdminService;
+import com.aurionpro.ISP.EducationalSoftware.solution.model.IStudentExamService;
+import com.aurionpro.ISP.EducationalSoftware.solution.model.StudentUser;
+
+public class EducationalSoftwareTest {
+public static void main(String[] args) {
+	IStudentExamService student = new StudentUser();
+    student.startExam();
+
+    AIProctorSystem ai = new AIProctorSystem();
+    ai.startExam();
+    ai.gradeExam();
+
+    IAdminService admin = new AdminUser();
+    admin.createQuestionBank();
+    admin.assignTeacher();
+}
+}
+}

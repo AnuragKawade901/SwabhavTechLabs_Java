@@ -1,0 +1,6 @@
+package com.aurionpro.LSP.VehicleFleet.solution.model;
+
+public interface IFuelVehicle extends IVehicle{
+	void refuel();
+
+}

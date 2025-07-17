@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.aurionpro.model.HashMap.java&apos; to &apos;HashMapExample.java&apos;&#x0D;&#x0A;- Original project: &apos;13-Collections&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.model.HashMap.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.model.HashMapExample.java&apos;" description="Rename compilation unit &apos;HashMap.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.aurionpro.model{HashMap.java" name="HashMapExample.java" references="false" stamp="1751620065376" version="1.0"/>
+</session>

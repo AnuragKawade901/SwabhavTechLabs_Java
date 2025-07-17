@@ -1,0 +1,8 @@
+package com.aurionpro.SRP.test;
+
+public class CalculatorTest {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in)
+	
+}
+}

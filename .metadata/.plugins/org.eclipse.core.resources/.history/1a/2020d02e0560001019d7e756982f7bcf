@@ -1,0 +1,7 @@
+package com.aurionpro.plugin.test;
+
+public class PluginTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scnner(System,in)
+}
+}

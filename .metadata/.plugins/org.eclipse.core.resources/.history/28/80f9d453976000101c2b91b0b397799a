@@ -1,0 +1,8 @@
+package com.aurionpro.SRP.PaitentRecord.model;
+
+public class PrintRecord {
+	public void printRecord(PaitentRecord paitentRecord) {
+		System.out.println("Paitent Name: "+paitentRecord.getPatientName());
+		
+	}
+}

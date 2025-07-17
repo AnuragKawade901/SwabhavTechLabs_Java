@@ -1,0 +1,45 @@
+package com.aurionpro.SOLIDS.IMS.model;
+
+public class InventoryService {
+	private List<Product> products = new ArrayList<>();
+    private List<Notifier> notifiers;
+    private ReorderService reorderService;
+    private ValuationStrategy valuationStrategy;
+
+    public InventoryService(List<Notifier> notifiers, ReorderService reorderService, ValuationStrategy valuationStrategy) {
+        this.notifiers = notifiers;
+        this.reorderService = reorderService;
+        this.valuationStrategy = valuationStrategy;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public void removeStock(String productName, int qty) {
+        for (Product p : products) {
+            if (p.getName().equalsIgnoreCase(productName)) {
+                int newQty = p.getQuantity() - qty;
+                p.setQuantity(newQty);
+                System.out.println("Stock updated: Removed " + qty + " units of '" + p.getName() + "'");
+                System.out.println("Current stock for " + p.getName() + ": " + p.getQuantity());
+
+                if (p.getQuantity() <= p.getReorderLevel()) {
+                    System.out.println("Reorder threshold reached for '" + p.getName() + "'. Triggering reorder...");
+                    reorderService.reorder(p);
+                    for (Notifier notifier : notifiers) {
+                        notifier.send("Low stock alert for '" + p.getName() + "'");
+                    }
+                }
+                return;
+            }
+        }
+        System.out.println("Product not found.");
+    }
+
+    public void showInventoryValue() {
+        double total = valuationStrategy.calculateValue(products);
+        System.out.printf("Total inventory value (using %s): $%,.2f\n",
+            valuationStrategy.getClass().getSimpleName().replace("Valuation", ""), total);
+    }
+}

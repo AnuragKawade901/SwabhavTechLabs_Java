@@ -1,0 +1,18 @@
+package com.aurionpro.test;
+
+public class DaemonTest{
+public static void main (String[] args) 
+	{
+  	DaemonDemo t1 = new DaemonDemo();
+  	t1.setDaemon(true);
+  
+  	t1.start();
+  
+  	// Ensuring JVM doesn't terminate immediately
+  	try {
+        Thread.sleep(100); 
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+}

@@ -1,0 +1,28 @@
+package com.aurionpro.SOLIDS.Order.test;
+
+import com.aurionpro.SOLIDS.Order.model.CreditCardProcessor;
+import com.aurionpro.SOLIDS.Order.model.ElectronicsDiscount;
+import com.aurionpro.SOLIDS.Order.model.EmailNotifier;
+import com.aurionpro.SOLIDS.Order.model.Notifier;
+import com.aurionpro.SOLIDS.Order.model.Order;
+import com.aurionpro.SOLIDS.Order.model.OrderProcessor;
+import com.aurionpro.SOLIDS.Order.model.PaymentProcessor;
+
+
+public class Main {
+	public static void main(String[] args) {
+        // Setup Order
+        Order order = new Order("ELECTRONICS", 1000);
+
+        // Use strategies and implementations
+        ElectronicsDiscount discount = new ElectronicsDiscount();
+        PaymentProcessor payment = new CreditCardProcessor();
+        Notifier notifier = new EmailNotifier();
+
+        // High-level module (depends on abstractions)
+        OrderProcessor processor = new OrderProcessor(discount, payment, notifier);
+
+        // Process the order
+        processor.process(order);
+    }
+}

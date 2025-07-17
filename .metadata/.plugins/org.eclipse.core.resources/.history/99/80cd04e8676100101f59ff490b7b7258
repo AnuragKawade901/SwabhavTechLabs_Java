@@ -1,0 +1,17 @@
+package com.aurionpro.ISP.EducationalSoftware.solution.model;
+
+public class AdminUser implements IAdminService{
+
+	@Override
+	public void createQuestionBank() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void assignTeacher() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

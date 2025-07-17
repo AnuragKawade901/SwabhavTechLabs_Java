@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.aurionpro.model.RemoteControl.java&apos; to &apos;IRemoteControl.java&apos;&#x0D;&#x0A;- Original project: &apos;09-Interface&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.model.RemoteControl.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.model.IRemoteControl.java&apos;" description="Rename compilation unit &apos;RemoteControl.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.aurionpro.model{RemoteControl.java" name="IRemoteControl.java" references="false" stamp="1751432637894" version="1.0"/>
+</session>

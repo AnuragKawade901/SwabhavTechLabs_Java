@@ -1,0 +1,18 @@
+package com.aurionpro.SOLIDS.IMS.model;
+
+import java.util.List;
+import java.util.ListIterator;
+
+public class LIFOValuation implements IValuationStrategy{
+	@Override
+	public double calculateValue(List<Product> products) {
+        double total = 0;
+        ListIterator<Product> it = products.listIterator(products.size());
+        while (it.hasPrevious()) {
+            Product p = it.previous();
+            total += p.getQuantity() * p.getPricePerUnit();
+        }
+        return total;
+    }
+
+}

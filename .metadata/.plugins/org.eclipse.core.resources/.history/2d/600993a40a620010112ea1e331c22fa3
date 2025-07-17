@@ -1,0 +1,19 @@
+package com.aurionpro.SOLIDS.Order.model;
+
+public class OrderProcessor {
+	private DiscountStrategy discountStrategy;
+    private PaymentProcessor paymentProcessor;
+    private Notifier notifier;
+
+    public OrderProcessor(DiscountStrategy discountStrategy, PaymentProcessor paymentProcessor, Notifier notifier) {
+        this.discountStrategy = discountStrategy;
+        this.paymentProcessor = paymentProcessor;
+        this.notifier = notifier;
+    }
+
+    public void process(Order order) {
+        double discountedAmount = discountStrategy.applyDiscount(order.getAmount());
+        paymentProcessor.pay(discountedAmount);
+        notifier.sendNotification(order);
+    }
+}

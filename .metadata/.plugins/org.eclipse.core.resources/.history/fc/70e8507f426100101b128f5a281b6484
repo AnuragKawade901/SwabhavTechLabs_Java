@@ -1,0 +1,53 @@
+package com.aurionpro.OCP.FixedDeposit.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.OCP.FixedDeposit.model.DiwaliPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.FestivalType;
+import com.aurionpro.OCP.FixedDeposit.model.HoliPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.InterestRatePolicy;
+import com.aurionpro.OCP.FixedDeposit.model.NewYearPolicy;
+import com.aurionpro.OCP.FixedDeposit.model.OtherPolicy;
+
+public class FDTest {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter Account Number: ");
+    int acc = scanner.nextInt();
+    scanner.nextLine(); // consume newline
+
+    System.out.print("Enter Name: ");
+    String name = scanner.nextLine();
+
+    System.out.print("Enter Principal Amount: ");
+    double principal = scanner.nextDouble();
+
+    System.out.print("Enter Duration (in years): ");
+    int duration = scanner.nextInt();
+    scanner.nextLine();
+
+    System.out.print("Enter Festival (NEWYEAR, DIWALI, HOLI, OTHERS): ");
+    String fest = scanner.nextLine().toUpperCase();
+
+    InterestRatePolicy policy;
+
+    switch (FestivalType.valueOf(fest)) {
+        case NEWYEAR: policy = new NewYearPolicy(); break;
+        case DIWALI: policy = new DiwaliPolicy(); break;
+        case HOLI: policy = new HoliPolicy(); break;
+        default: policy = new OtherPolicy(); break;
+    }
+
+    FixedDeposit fd = new FixedDeposit(acc, name, principal, duration, policy);
+
+    System.out.println("\n--- Fixed Deposit Details ---");
+    System.out.println("Name: " + fd.getName());
+    System.out.println("Account Number: " + fd.getAccountNumber());
+    System.out.println("Principal: " + fd.getPrincipal());
+    System.out.println("Duration: " + fd.getDuration() + " years");
+    System.out.println("Festival Rate: " + policy.getRate() + "%");
+    System.out.println("Simple Interest: ₹" + fd.calculateSimpleInterest());
+}
+}
+

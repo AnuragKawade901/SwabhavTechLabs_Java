@@ -1,0 +1,20 @@
+package com.aurionpro.DIP.EcommerceNotification.solution.model;
+
+public class OrderService {
+	private List<Notifier> notifiers;
+	public OrderService(List<Notifier> notifiers) {
+        this.notifiers = notifiers;
+    }
+
+    public void placeOrder(String orderDetails) {
+        System.out.println("Placing order: " + orderDetails);
+        notifyAllChannels("Your order for '" + orderDetails + "' has been placed.");
+    }
+
+    private void notifyAllChannels(String message) {
+        for (Notifier notifier : notifiers) {
+            notifier.send(message);
+        }
+}
+}
+

@@ -1,0 +1,5 @@
+package com.aurionpro.SRP.PaitentRecord.model;
+
+public class PrintRecord {
+
+}

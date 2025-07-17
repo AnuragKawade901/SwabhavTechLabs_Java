@@ -1,0 +1,12 @@
+package com.aurionpro.DIP.EcommerceNotification.solution.test;
+
+import com.aurionpro.DIP.EcommerceNotification.solution.model.EmailSender;
+import com.aurionpro.DIP.EcommerceNotification.solution.model.INotification;
+import com.aurionpro.DIP.EcommerceNotification.solution.model.SmsSender;
+
+public class EcommerceNotificationTest {
+public static void main(String[] args) {
+	INotification email = new EmailSender();
+	INotification sms = new SmsSender()
+}
+}

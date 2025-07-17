@@ -1,0 +1,24 @@
+package com.aurionpro.model;
+
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        String[] arr = new String[2]; // Array of size 2
+        String str = null;            // Null string
+
+        try {
+            // This will throw ArrayIndexOutOfBoundsException
+            System.out.println("Accessing 5th element: " + arr[4]);
+
+            // This will throw NullPointerException (if above didn't already throw)
+            System.out.println("Length of string: " + str.length());
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Tried to access index out of array bounds.");
+        } catch (NullPointerException e) {
+            System.out.println("Error: Tried to access method on a null object.");
+        }
+
+        System.out.println("Program finished.");
+    }
+}
+}

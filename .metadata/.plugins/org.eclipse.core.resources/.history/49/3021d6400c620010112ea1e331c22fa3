@@ -1,0 +1,5 @@
+package com.aurionpro.SOLIDS.IMS.model;
+
+public class InventoryService {
+
+}

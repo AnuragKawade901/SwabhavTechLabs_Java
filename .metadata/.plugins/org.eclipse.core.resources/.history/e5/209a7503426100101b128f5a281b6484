@@ -1,0 +1,29 @@
+package com.aurionpro.OCP.FixedDeposit.test;
+
+public class FixedDeposit {
+	private int accountNumber;
+    private String name;
+    private double principal;
+    private int duration;
+    private InterestRatePolicy policy;
+
+    public FixedDeposit(int accountNumber, String name, double principal, int duration, InterestRatePolicy policy) {
+        this.accountNumber = accountNumber;
+        this.name = name;
+        this.principal = principal;
+        this.duration = duration;
+        this.policy = policy;
+    }
+
+    public double calculateSimpleInterest() {
+        return (principal * duration * policy.getRate()) / 100;
+    }
+
+    // Getters (optional)
+    public int getAccountNumber() { return accountNumber; }
+    public String getName() { return name; }
+    public double getPrincipal() { return principal; }
+    public int getDuration() { return duration; }
+    public InterestRatePolicy getPolicy() { return policy; }
+}
+}

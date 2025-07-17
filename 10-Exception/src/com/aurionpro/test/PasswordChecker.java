@@ -1,0 +1,26 @@
+package com.aurionpro.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.model.InvalidPasswordException;
+
+public class PasswordChecker {
+	public static void checkPassword(String pwd) throws InvalidPasswordException {
+        if (pwd.length() < 8 || !pwd.matches(".*\\d.*")) {
+            throw new InvalidPasswordException("Password must be at least 8 characters and contain a digit.");
+        }
+        System.out.println("Password is valid.");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your password: ");
+        String input = scanner.nextLine();
+
+        try {
+            checkPassword(input);
+        } catch (InvalidPasswordException e) {
+            System.out.println("Invalid Password: " + e.getMessage());
+        }
+    }
+}

@@ -1,0 +1,31 @@
+package com.aurionpro.LSP.EcommercePromotion.solution.test;
+
+import com.aurionpro.LSP.EcommercePromotion.solution.model.BogoDiscount;
+import com.aurionpro.LSP.EcommercePromotion.solution.model.Cart;
+import com.aurionpro.LSP.EcommercePromotion.solution.model.IDiscountStrategy;
+import com.aurionpro.LSP.EcommercePromotion.solution.model.Item;
+import com.aurionpro.LSP.EcommercePromotion.solution.model.NoDiscount;
+import com.aurionpro.LSP.EcommercePromotion.solution.model.PercentageDiscount;
+
+public class DiscountTest {
+	public static void main(String[] args) {
+        // Setup cart
+        Cart cart = new Cart();
+        cart.addItem(new Item("Shirt", 2, 500));
+        cart.addItem(new Item("Socks", 3, 100));
+
+        // Discount strategies
+        IDiscountStrategy[] strategies = {
+            new NoDiscount(),
+            new PercentageDiscount(10),
+            new BogoDiscount()
+        };
+
+        for (IDiscountStrategy strategy : strategies) {
+            System.out.println("Applying: " + strategy.getClass().getSimpleName());
+            double discountedTotal = strategy.applyDiscount(cart);
+            System.out.println("Total after discount: ₹" + discountedTotal);
+            System.out.println("---------------------------------");
+        }
+    }
+}

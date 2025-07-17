@@ -1,0 +1,12 @@
+package com.aurionpro.model;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class FilterQuestions {
+public static void main(String[] args) {
+	List<Integer> list = Arrays.asList(2,1,3,5,2,6,8,21,54,24);
+	list.stream().filter(number -> number %2 == 0).forEach(System.out::println);
+	
+}
+}

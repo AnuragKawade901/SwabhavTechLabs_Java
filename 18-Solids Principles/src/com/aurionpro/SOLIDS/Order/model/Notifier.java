@@ -1,0 +1,7 @@
+package com.aurionpro.SOLIDS.Order.model;
+
+public interface  Notifier {
+	void sendNotification(Order order);
+
+	void send(String string);
+}
