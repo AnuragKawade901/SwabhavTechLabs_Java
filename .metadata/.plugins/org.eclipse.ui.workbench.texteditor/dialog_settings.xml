@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="linkedHashMap"/>
+		<item key="selection" value="filter"/>
 		<list key="findhistory">
+			<item value="filter"/>
+			<item value="welcome"/>
+			<item value="public List inventory = new LinkedList();"/>
 			<item value="map"/>
 			<item value="//"/>
 			<item value="sc"/>

@@ -1,5 +1,0 @@
-package com.aurionpro.LSP.VehicleFleet.solution.model;
-
-public class HybridCar implements IElectricVehicle, IFuelVehicle{
-
-}

@@ -1,7 +1,0 @@
-package com.aurionpro.SRP.PaitentRecord.model;
-
-public class EmailNotification {
-public void emailNotification(PaitentRecord paitentRecord) {
-	
-}
-}

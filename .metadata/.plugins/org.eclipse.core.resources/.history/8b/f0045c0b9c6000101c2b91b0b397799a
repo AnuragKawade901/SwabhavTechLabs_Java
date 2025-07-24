@@ -1,6 +1,0 @@
-package com.aurionpro.OCP.model;
-
-public class Quiz implements ContentRenderer
-{
-
-}

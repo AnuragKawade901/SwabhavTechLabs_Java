@@ -1,5 +1,0 @@
-package com.aurionpro.OCP.ClaimProcessor.model;
-
-public interface ClaimProcessor {
-public void claim
-}

@@ -1,5 +1,0 @@
-package com.aurionpro.DIP.EcommerceNotification.solution.model;
-
-public class EmailSender {
-
-}

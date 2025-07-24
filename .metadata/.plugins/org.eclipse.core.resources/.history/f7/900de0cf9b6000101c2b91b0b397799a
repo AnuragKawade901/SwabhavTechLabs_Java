@@ -1,5 +1,0 @@
-package com.aurionpro.OCP.model;
-
-public interface ContentRenderer {
-	public String getRender();
-}

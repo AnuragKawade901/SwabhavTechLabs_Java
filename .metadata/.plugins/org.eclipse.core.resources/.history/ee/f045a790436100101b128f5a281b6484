@@ -1,7 +1,0 @@
-package com.aurionpro.OCP.FixedDeposit.model;
-
-public class OtherPolicy implements InterestRatePolicy{
-    public double getRate() {
-        return 6.5;
-    }
-}

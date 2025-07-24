@@ -1,9 +1,0 @@
-package com.aurionpro.OCP.ClaimProcessor.test;
-
-import com.aurionpro.OCP.ClaimProcessor.model.ClaimProcessor;
-
-public class Claim {
-public void insuranceClaim(ClaimProcessor claimProcessor) {
-	return claimProcessor.claim();
-}
-}

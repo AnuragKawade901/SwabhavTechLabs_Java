@@ -1,7 +1,0 @@
-package com.aurionpro.SRP.model;
-
-public class Addition {
-public void add(Calculator calculator) {
-	System.out.println("Addtion is:"+(number1+number2));
-}
-}

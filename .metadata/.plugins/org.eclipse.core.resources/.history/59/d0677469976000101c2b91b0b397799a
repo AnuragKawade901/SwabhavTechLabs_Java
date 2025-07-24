@@ -1,7 +1,0 @@
-package com.aurionpro.SRP.PatientRecord.test;
-
-public class PatientRecordTest {
-public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in)
-}
-}

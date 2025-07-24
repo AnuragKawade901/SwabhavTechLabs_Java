@@ -1,7 +1,0 @@
-package com.aurionpro.OCP.FixedDeposit.model;
-
-public class DiwaliPolicy implements InterestRatePolicy{
-	   public double getRate() {
-	        return 8.5;
-	    }
-}

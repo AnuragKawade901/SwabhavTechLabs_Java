@@ -1,7 +1,0 @@
-package com.aurionpro.OCP.ClaimProcessor.test;
-
-public class ClaimProcessorTest {
-public static void main(String[] args) {
-	Claim claim = new Claim();
-}
-}

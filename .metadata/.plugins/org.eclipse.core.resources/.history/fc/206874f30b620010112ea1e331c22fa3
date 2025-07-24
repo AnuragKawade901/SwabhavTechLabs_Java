@@ -1,7 +1,0 @@
-package com.aurionpro.SOLIDS.IMS.model;
-
-import java.util.List;
-
-public interface IValuationStrategy {
-	double calculateValue(List<Product> products);s
-}

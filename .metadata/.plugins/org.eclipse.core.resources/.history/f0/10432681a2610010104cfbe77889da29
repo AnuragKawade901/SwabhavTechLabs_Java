@@ -1,6 +1,0 @@
-package com.aurionpro.Minitask.model;
-
-public class InvalidMarksException extends Exception {
-        super(message);
-    }
-}

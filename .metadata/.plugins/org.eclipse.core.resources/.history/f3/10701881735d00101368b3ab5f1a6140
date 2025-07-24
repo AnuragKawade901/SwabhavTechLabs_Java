@@ -1,7 +1,0 @@
-package com.aurionpro.test;
-
-public class Snippet {
-	ThreadUsingThreadClass thread1 = new ThreadUsingThreadClass();
-	thread1.start();
-}
-
