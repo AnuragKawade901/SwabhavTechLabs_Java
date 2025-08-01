@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form action="convert" method="get">
+        <label>Amount:</label>
+        <input type="text" name="amount" required><br><br>
+
+        <label>From Currency:</label>
+        <select name="from" required>
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+        </select><br><br>
+
+        <label>To Currency:</label>
+        <select name="to" required>
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select><br><br>
+
+        <button type="submit">Convert</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+    <title>Resume Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-box {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="form-box">
+    <h2>Submit Your Resume</h2>
+    <form action="ResumeUploadServlet" method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Skills (comma-separated):</label>
+        <input type="text" name="skills" required>
+
+        <label>Resume Text:</label>
+        <textarea name="resumeText" rows="5"></textarea>
+
+        <input type="submit" value="Submit Resume">
+    </form>
+</div>
+</body>
+</html>
