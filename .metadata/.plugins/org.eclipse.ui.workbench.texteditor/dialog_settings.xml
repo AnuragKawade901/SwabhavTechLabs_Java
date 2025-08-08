@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Enter your Password"/>
+		<item key="selection" value="setDiscountRules"/>
 		<list key="findhistory">
+			<item value="setDiscountRules"/>
+			<item value="index"/>
 			<item value="enter your password"/>
 			<item value="email"/>
 			<item value="active"/>
@@ -21,8 +23,6 @@
 			<item value="filter"/>
 			<item value="public List inventory = new LinkedList();"/>
 			<item value="map"/>
-			<item value="//"/>
-			<item value="sc"/>
 		</list>
 		<list key="replacehistory">
 			<item value="linkedHashMap"/>

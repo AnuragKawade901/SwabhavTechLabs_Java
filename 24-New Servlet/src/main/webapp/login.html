@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="Ecommercestyle.css">
+<script>
+        function validateLogin() {
+            const username = document.forms["loginForm"]["username"].value;
+            if (username.trim() === "") {
+                alert("Username is required");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<h1>Welcome to ECommerce - mart</h1>
+    <h3>Login</h3>
+    <form name="loginForm" action="login" method="post" onsubmit="return validateLogin()">
+        <input type="text" name="username" placeholder="Enter username" />
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>
